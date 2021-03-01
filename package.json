@@ -1,0 +1,14 @@
+{
+  "name": "webscoket_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js"
+  },
+  "author": "Miguel Ferreira",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^2.0.4"
+  }
+}
