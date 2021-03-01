@@ -1,5 +1,20 @@
 var app = require('http').createServer();
 
+//CORS TRIALS
+ var app = require('http').createServer(function(req,res){
+ 	// Set CORS headers
+ 	res.setHeader('Access-Control-Allow-Origin', 'http://dad.p6.dev');
+ 	res.setHeader('Access-Control-Request-Method', '*');
+ 	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+ 	res.setHeader('Access-Control-Allow-Credentials', true);
+ 	res.setHeader('Access-Control-Allow-Headers', req.header.origin);
+ 	if ( req.method === 'OPTIONS' ) {
+ 		res.writeHead(200);
+ 		res.end();
+ 		return;
+ 	}
+});
+
 var io = require('socket.io')(app);
 
 app.listen(5000, function(){

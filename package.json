@@ -9,6 +9,6 @@
   "author": "Miguel Ferreira",
   "license": "ISC",
   "dependencies": {
-    "socket.io": "^2.0.4"
+    "socket.io": "^3.0"
   }
 }
