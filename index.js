@@ -6,6 +6,8 @@ var io = require('socket.io')(app, {
 	}
 });
 
+io.set('transports', ['websocket']);
+
 app.listen(5000, function(){
 	console.log('listening on *:5000');
 });
