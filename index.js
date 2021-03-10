@@ -22,8 +22,14 @@ io.on('connection', function (socket) {
 		console.log(data)
 		io.to(data.room_id).emit('video_shared', data.video_name)
 	})
+
 	socket.on('start_timer', function (data) {
 		console.log(data)
 		io.to(data.room_id).emit('timer_started', data.duration)
+	})
+
+	socket.on('stop_timer', function (data) {
+		console.log(data)
+		io.to(data.room_id).emit('timer_stoped')
 	})
 })
