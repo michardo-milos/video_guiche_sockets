@@ -25,7 +25,12 @@ io.on('connection', function (socket) {
 
 	socket.on('start_timer', function (data) {
 		console.log(data)
-		io.to(data.room_id).emit('timer_started', data.duration)
+		io.to(data.room_id).emit('timer_started')
+	})
+
+	socket.on('set_timer', function (data) {
+		console.log(data)
+		io.to(data.room_id).emit('timer_defined', data.duration)
 	})
 
 	socket.on('stop_timer', function (data) {
